@@ -14,8 +14,6 @@
 srun --partition=main --mem=10000 --time=03:00:00 --pty bash
 ```
 
-## Setting Up Conda Environment
-
 ### Note on Nodes
 - **Login Node**: The initial node you connect to; used for data transfer, software building, and job preparation.
 - **Compute Nodes**: Use these for running jobs to avoid impacting other users on the shared login node.
