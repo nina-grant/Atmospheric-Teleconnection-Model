@@ -4,22 +4,26 @@
 1. Open a terminal:
     - **Macs**: Open a terminal.
     - **Windows**: Use MobaXTerm or VSCode.
-2. Connect to Amarel:
+      
+2. Connect to the Amarel virtual machine:
     ```bash
     ssh user@amarel.rutgers.edu
     ```
+### Off-Campus?
+If you are not on campus and connected to the Rutgers wifi, you will have to download Cisco Secure Client and connect to the Rutgers VPN before you can ssh to Amarel.
+Find instructions for setting up the VPN here: [Rutgers VPN](https://it.rutgers.edu/virtual-private-network/)
 
 ## Login to a Compute Node
 ```bash
 srun --partition=main --mem=10000 --time=03:00:00 --pty bash
 ```
 
-### Note on Nodes
-- **Login Node**: The initial node you connect to; used for data transfer, software building, and job preparation.
-- **Compute Nodes**: Use these for running jobs to avoid impacting other users on the shared login node.
+### *A Note on Nodes*
+- **Login Nodes**: The initial node you connect to. There can often be over 100 users connected to one login node at one time.
+- **Compute Nodes**: ***ALWAYS*** use these for running jobs to avoid impacting other users on the shared login node. Running applications on a shared login node or doing things that consume significant compute, memory, or network resources can unfairly impact other users.
 
-### Create Your Conda Environment
-1. Load necessary modules:
+## Create Your Conda Environment
+1. Load the necessary modules to define our own custom environments:
     ```bash
     module use /projects/community/modulefiles/
     module load anaconda/2020.07-gc563
@@ -40,6 +44,7 @@ srun --partition=main --mem=10000 --time=03:00:00 --pty bash
     conda activate PyGCM
     ```
 5. Install necessary packages:
+    - *Make sure you install `esmpy` first.*
     ```bash
     conda install -c conda-forge esmpy
     pip install torch xarray numpy matplotlib netcdf4 pydap h5netcdf scipy xesmf dask cartopy pandas dask[distributed] torch_harmonics metpy
@@ -48,7 +53,11 @@ srun --partition=main --mem=10000 --time=03:00:00 --pty bash
     ```
 
 ## Open Jupyter Notebook
-### From Terminal
+See Amarel's walkthrough video on the different ways to access and interact with Amarel:
+[Intro to the Amarel Cluster](https://rutgers.mediaspace.kaltura.com/channel/OARC-Intro-to-the-Amarel-Cluster)
+
+
+### From the Terminal  # confirm steps for this or exclude
 ```bash
 jupyter notebook
 ```
@@ -62,19 +71,33 @@ jupyter notebook
 - Click `preprocess.ipynb`
 
 ## OnDemand Walkthrough
-1. Run `preprocess.ipynb`.
-2. Navigate to `/scratch` or `/home` directory.
-3. Create new folders for model files and output.
-4. Open `preprocess.ipynb` and select the new environment by changing the kernel.
-5. Recommended to work in `/scratch` and transfer final files to `/home`.
+
+
+## Run `preprocess.ipynb`
+1. Navigate to `/scratch` or `/home` directory.
+2. Create new folders for the model files and the output.
+3. Download the model files from GitHub
+4. Upload the PyGCM files to your new `/Model` folder.
+5. Open `preprocess.ipynb` and select the PyGCM environment by changing the kernel if needed.
+6. Recommended to work in `/scratch` and transfer final files to `/home`.
+
+### A note on directories
+- Your personal /home directory is in /home/<NetID>. You have 100 GB of backed-up storage there.
+- Your temporary /scratch directory is in /scratch/<NetID>. You have 1 TB of space there.
+- This is the best location for running your jobs because you have more space than in your /home directory and you can have multiple jobs or tasks concurrently reading and writing. The trade-off for performance and extra space in this directory is that nothing in the /scratch directory is backed up. If you delete files in your /scratch directory, they cannot be recovered. 
 
 ## Recommended Workflow
-1. Create a new folder for each experiment within `/scratch/$USER/Model`.
-2. Copy default versions of `preprocess`, `RunModel`, `subs1_util` into the new folder.
-3. Make edits and run `preprocess` to generate input files.
-4. Edit `RunModel` and generate a `.py` version.
-5. Run `sbatch` script, save the job ID, and log files.
-6. Postprocess output (e.g., convert sigma to pressure).
+1. Create a new folder for each experiment within `/scratch/$USER/Model`. (Try to use descriptive and specific names).
+2. Copy the default versions of `preprocess`, `RunModel`, and `subs1_util` into the new experiment folder.
+3. Make your edits and run `preprocess` to generate the input files.
+4. Edit `RunModel` and generate a `.py` version:
+    Ex: `jupyter nbconvert --to script /scratch/$USER/Model/RunModel.Total.ipynb --output RunModelConverted`
+   You can run it with or without the --output option and name the output file whatever you want.
+5. Run the `sbatch` script and modify the path for the log files, if necessary.
+6. Save the job ID# for future reference and troubleshooting.
+7. Postprocess the output (e.g., convert sigma to pressure).
+
+Also see the creator's workflow instructions below. The instructions above have been modified for use on Amarel.
 
 ## Helpful Commands
 - **Check storage usage**: 
@@ -106,6 +129,8 @@ jupyter notebook
 - [Welcome to Amarel](https://sites.google.com/view/cluster-user-guide/amarel/welcome)
 - [Cluster Guide](https://sites.google.com/view/cluster-user-guide#h.q5kh60n6t6zy)
 - [Accessing Amarel Video Tutorial](https://rutgers.mediaspace.kaltura.com/channel/OARC-Intro-to-the-Amarel-Cluster)
+
+
 
 # Atmospheric Teleconnection Model
 
