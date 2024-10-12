@@ -1,4 +1,4 @@
-# Getting Set-up in Amarel
+# Getting Set-Up in Amarel
 
 ## Connect to Amarel
 1. Open a terminal:
