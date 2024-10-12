@@ -71,7 +71,20 @@ jupyter notebook
 - Click `preprocess.ipynb`
 
 ## OnDemand Walkthrough
+Go to `Interactive Apps` then `Personal Jupyter` 
+![screenshot](./images/Screenshot%202024-10-11%20130054.png)
 
+Choose how many hours you need. You can request 2 CPUs and 10 GB of memory.
+![screenshot](./images/Screenshot%202024-10-11%20130348.png)
+
+No need to make many edits to these fields.
+![screenshot](./images/Screenshot%202024-10-11%20130522.png)
+
+You'll then be taken to this next page. Wait for the resources to be assigned. When the button appears, connect to your new job.
+![screenshot](./images/Screenshot%202024-10-11%20130622.png)
+
+Navigate to the `/scratch` folder by clicking the folder symbol. Find your username.
+![screenshot](./images/Screenshot%202024-10-11%20131520.png)
 
 ## Run `preprocess.ipynb`
 1. Navigate to your `/scratch` or `/home` directory.
@@ -160,6 +173,3 @@ The RunModel.beta.ipynb file is the weakly prescribed mean version and the RunMo
 Before running the postprocess file, edit the variables to match your data from the preprocess and model files. There are two post-processing scripts in the Postprocess folder for vertical interpolation for sigma to pressure coordinates. The preferred post-processing uses metpy as indicated in the filename. The raw model output is in the native sigma coordinate in the vertical and is on the Gaussian grid for the horizontal.
 
 8) Issues, questions or concerns please contact Ben Kirtman at bkirtman@miami.edu.
-
-
-![test](./images/Screenshot%202024-10-11%20130054.png)
