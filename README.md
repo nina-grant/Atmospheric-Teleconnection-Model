@@ -47,8 +47,14 @@ srun --partition=main --mem=10000 --time=03:00:00 --pty bash
     - *Make sure you install `esmpy` first.*
     ```bash
     conda install -c conda-forge esmpy
+    ```
+    ```bash
     pip install torch xarray numpy matplotlib netcdf4 pydap h5netcdf scipy xesmf dask cartopy pandas dask[distributed] torch_harmonics metpy
+    ```
+    ```bash
     conda install -c conda-forge ipykernel
+    ```
+    ```bash
     python -m ipykernel install --user --name=PyGCM
     ```
 
