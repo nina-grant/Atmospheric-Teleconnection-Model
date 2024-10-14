@@ -57,10 +57,6 @@ See Amarel's walkthrough video on the different ways to access and interact with
 [Intro to the Amarel Cluster](https://rutgers.mediaspace.kaltura.com/channel/OARC-Intro-to-the-Amarel-Cluster)
 
 
-### From the Terminal  # confirm steps for this or exclude
-```bash
-jupyter notebook
-```
 ### OnDemand
 - Go to: [OnDemand](https://ondemand.hpc.rutgers.edu/)
 
