@@ -92,7 +92,7 @@ Navigate to the `/scratch` folder by clicking the folder symbol. Find your usern
 1. Navigate to your `/scratch` or `/home` directory.
    - It's recommended to work in `/scratch` and transfer your final files to `/home` when you're done.
 2. Create new folders for the model files and the output files.
-3. Download the model files from [GitHub](https://github.com/jsb288/Atmospheric-Teleconnection-Model).
+3. Download the model files from [GitHub](./MultiThread_Model).
 4. Upload the PyGCM files to your new `/Model` folder.
 5. Open `preprocess.ipynb` and select the PyGCM environment by changing the kernel, if needed.
 
@@ -114,7 +114,10 @@ Navigate to the `/scratch` folder by clicking the folder symbol. Find your usern
 7. Save the job ID# for future reference and troubleshooting.
 8. Postprocess the output (e.g., convert sigma to pressure).
 
+##
 Also see the creator's workflow instructions below. The instructions above have been modified for use on Amarel.
+
+[Link to the original repository](https://github.com/jsb288/Atmospheric-Teleconnection-Model)
 
 ## Helpful Commands
 - **Check storage usage**: 
