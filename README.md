@@ -94,16 +94,17 @@ Navigate to the `/scratch` folder by clicking the folder symbol. Find your usern
 
 ## Recommended Workflow
 1. Create a new folder for each experiment within `/scratch/$USER/Model`. (Try to use descriptive and specific names).
-2. Copy the default versions of `preprocess`, `RunModel`, and `subs1_util` into the new experiment folder.
+2. Copy the default versions of `preprocess`, `RunModel`, `subs1_util`, and `submit_run.sh` into the new experiment folder.
 3. Make your edits and run `preprocess` to generate the input files.
 4. Edit `RunModel` and generate a `.py` version:
 
    Ex: `jupyter nbconvert --to script /scratch/$USER/Model/RunModel.Total.ipynb --output RunModelConverted`
 
    You can run it with or without the --output option and name the output file whatever you want. The default without the `--output` flag is to keep the same name and only change the file type.
-6. Modify and run the `sbatch` script. Change the username and the paths for the input folder and log file.
-7. Save the job ID# for future reference and troubleshooting.
-8. Postprocess the output (e.g., convert sigma to pressure).
+6. Open and modify the `submit_run.sh` script. Change the username and the paths for the input folder and log file.
+7. Run the model from the terminal: `sbatch submit.sh`    (Be sure you're in the right working directory)
+8. Save the job ID# for future reference and troubleshooting.
+9. Postprocess the output (e.g., convert sigma to pressure).
 
 ##
 Also see the creator's workflow instructions below. The instructions above have been modified for use on Amarel.
