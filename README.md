@@ -71,7 +71,7 @@ Choose how many hours you need. You can request 2 CPUs and 10 GB of memory. You 
 ![screenshot](./images/Screenshot%202024-10-11%20130348.png)
 
 Change the conda path to: `/home/$USER/miniconda3`, replacing $USER with your ID. Type `base` for your environment.
-![screenshot](./images/Screenshot%202024-10-11%20130522.png)
+![screenshot](./images/Screenshot%202024-10-18%20145714.png)
 
 You'll then be taken to this next page. Wait for the resources to be assigned. When the button appears, connect to your new job.
 ![screenshot](./images/Screenshot%202024-10-11%20130622.png)
