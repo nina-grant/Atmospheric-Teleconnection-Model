@@ -67,10 +67,10 @@ See Amarel's walkthrough video on the different ways to access and interact with
 Go to `Interactive Apps` then `Personal Jupyter` 
 ![screenshot](./images/Screenshot%202024-10-11%20130054.png)
 
-Choose how many hours you need. You can request 2 CPUs and 10 GB of memory.
+Choose how many hours you need. You can request 2 CPUs and 10 GB of memory. You can also select the partition `p_sebs_1`, but this isn't necessary at this stage.
 ![screenshot](./images/Screenshot%202024-10-11%20130348.png)
 
-No need to make many edits to these fields.
+Change the conda path to: `/home/$USER/miniconda3`, replacing $USER with your ID. Type `base` for your environment.
 ![screenshot](./images/Screenshot%202024-10-11%20130522.png)
 
 You'll then be taken to this next page. Wait for the resources to be assigned. When the button appears, connect to your new job.
