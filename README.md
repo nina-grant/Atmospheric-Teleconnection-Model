@@ -34,33 +34,17 @@ srun --partition=main --mem=10000 --time=03:00:00 --pty bash
     cd
     source .bashrc
     ```
-3. Add path to environment:
+3. Add path to the environment:
    ```bash
    conda config --add envs_dirs /projects/community/miniconda3/envs
    ```
-
-
-   
-5. Create directories for Conda environments:
+   Run `conda env list` to confirm the environment paths loaded.
+5. Activate the environment PyGCM
     ```bash
-    mkdir -p .conda/pkgs/cache .conda/envs
+   conda activate PyGCM
     ```
-6. Create and activate your Conda environment:
-    ```bash
-    conda create -n PyGCM
-    conda activate PyGCM
-    ```
+    Try specifying the full path if that doesn't work: `conda activate /projects/community/miniconda3/envs/PyGCM`
 7. Install necessary packages:
-    - *Make sure you install `esmpy` first.*
-    ```bash
-    conda install -c conda-forge esmpy
-    ```
-    ```bash
-    pip install torch xarray numpy matplotlib netcdf4 pydap h5netcdf scipy xesmf dask cartopy pandas dask[distributed] torch_harmonics metpy
-    ```
-    ```bash
-    conda install -c conda-forge ipykernel
-    ```
     ```bash
     python -m ipykernel install --user --name=PyGCM
     ```
