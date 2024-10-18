@@ -58,10 +58,10 @@ See Amarel's walkthrough video on the different ways to access and interact with
 - Go to: [OnDemand](https://ondemand.hpc.rutgers.edu/)
 
 ### HPC
-- Go to: [Amarel HPC](https://amarel.hpc.rutgers.edu:3443/)
+- or Go to: [Amarel HPC](https://amarel.hpc.rutgers.edu:3443/)
 
 ### VSCode
-- Click `preprocess.ipynb`
+- or Click `preprocess.ipynb`
 
 ## OnDemand Walkthrough
 Go to `Interactive Apps` then `Personal Jupyter` 
