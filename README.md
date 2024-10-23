@@ -15,7 +15,7 @@ Find instructions for setting up the VPN here: [Rutgers VPN](https://it.rutgers.
 
 ## Login to a Compute Node
 ```bash
-srun --partition=main --mem=10000 --time=03:00:00 --pty bash
+srun --partition=p_sebs_1 --mem=10000 --time=03:00:00 --pty bash
 ```
 
 ### *A Note on Nodes*
