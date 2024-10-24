@@ -83,7 +83,7 @@ Navigate to the `/scratch` folder by clicking the folder symbol. Find your usern
 1. Navigate to your `/scratch` or `/home` directory.
    - It's recommended to work in `/scratch` and transfer your final files to `/home` when you're done.
 2. Create new folders for the model files and the output files.
-3. Download the model files from [GitHub](./MultiThread_Model).
+3. Download the model files in /MultiThread_Model from [GitHub](./MultiThread_Model) or use [](https://download-directory.github.io/).
 4. Upload the PyGCM files to your new `/Model` folder.
 5. Open `preprocess.ipynb` and select the PyGCM environment by changing the kernel, if needed.
 
